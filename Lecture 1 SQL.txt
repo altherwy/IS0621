@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS r;
+CREATE TABLE r (id INT PRIMARY KEY, val VARCHAR(6));
+INSERT INTO r VALUES (100,'aaa'),(200,'bbb'),(300,'ccc');
+
+
+SELECT r.ctid, r.* FROM r;
+
+DELETE FROM r WHERE id = 200;
+
+INSERT INTO r VALUES (400,'ddd');
+
+VACUUM FULL r;
